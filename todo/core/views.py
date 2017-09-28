@@ -46,18 +46,3 @@ def task_remove(request, id):
     task = Task.objects.get(id=id)
     task.delete()
     return redirect('task')
-
-
-def login_view(request):
-    form = LoginForm()
-    if request.method == "POST":
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data["username"]
-            password = form.cleaned_data["password"]
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect(request.POST.get('next', '/'))
-    ctx = {'form': form}
-    return render(request, 'login.html', ctx)
