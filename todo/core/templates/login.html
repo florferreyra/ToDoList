@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+{% block styles %}
+  {{ block.super }}
+{% endblock styles %}
+
+{% block scripts %}
+  {{ block.super }}
+{% endblock scripts %}
+
+{% block content %}
+<!-- Form login -->
+<form>
+  <p class="h5 text-center mb-4">Sign in</p>
+
+  {{ form.as_p }}
+
+  <div class="text-center">
+      <button class="btn btn-default">Login</button>
+  </div>
+</form>
+<!-- Form login -->
+{% endblock content %}
