@@ -4,11 +4,13 @@ from models import Task
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from forms import TaskForm, LoginForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth.models import User
 
 
+@login_required
 def task(request):
-    task_list = Task.objects.all()
+    user = request.user
+    task_list = Task.objects.filter(user=user)
     ctx = {'task_list': task_list}
     return render(request, 'task_list.html', ctx)
 
@@ -28,12 +30,14 @@ def task_new(request):
     return render(request, 'task_new.html', ctx)
 
 
+@login_required
 def task_edit(request, id):
-    task = Task.objects.get(id=id)
+    task = Task.objects.get(user=request.user, id=id)
     if request.method == "POST":
         form = TaskForm(request.POST, instance=task)
         if form.is_valid():
-            form.save(commit=False)
+            task = form.save(commit=False)
+            task.user = request.user
             form.save()
             return redirect('tasks')
     else:
@@ -42,7 +46,8 @@ def task_edit(request, id):
     return render(request, 'task_new.html', ctx)
 
 
+@login_required
 def task_remove(request, id):
-    task = Task.objects.get(id=id)
+    task = Task.objects.get(user=request.user, id=id)
     task.delete()
-    return redirect('task')
+    return redirect('tasks')

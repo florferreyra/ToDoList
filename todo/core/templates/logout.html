@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+{% block styles %}
+  {{ block.super }}
+{% endblock styles %}
+
+{% block scripts %}
+  {{ block.super }}
+{% endblock scripts %}
+
+{% block content %}
+<div class="container">
+
+  <!--Panel-->
+  <div class="card card-body">
+      <h4 class="card-title">Logout successful</h4>
+      <p class="card-text">Tranks for using our app. If you want to continue using it just press Login.</p>
+      <div class="flex-row">
+        <a class="btn btn-primary ml-3" href="{% url 'login' %}" role="button">Login</a>
+      </div>
+  </div>
+  <!--/.Panel-->
+
+</div>
+<!-- Form login -->
+{% endblock content %}
