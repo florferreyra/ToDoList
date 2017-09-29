@@ -18,10 +18,11 @@ def task(request):
 @login_required
 def task_new(request):
     if request.method == "POST":
-        form = TaskForm(request.POST)
+        form = TaskForm(request.POST, request.FILE)
         if form.is_valid():
             task = form.save(commit=False)
             task.user = request.user
+            task.docfile = request.FILES['docfile']
             form.save()
             return redirect('tasks')
     else:
