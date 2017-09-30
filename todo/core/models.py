@@ -29,7 +29,7 @@ class Task(TimeStampedModel):
     state = models.CharField(max_length=50, choices=STATE_CHOICES)
     user = models.ForeignKey(User)
     expired = models.DateField(null=True, blank=True)
-    docfile = models.FileField(upload_to='documents/%Y/%m/%d', null=True, blank=True)
+    file = models.FileField(upload_to='documents/%Y/%m/%d', null=True, blank=True)
 
     class Meta:
         verbose_name = "Task"

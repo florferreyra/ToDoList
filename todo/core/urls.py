@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^tasks/form-task/$', views.task_new, name="form_task"),
     url(r'^tasks/task-edit/(?P<id>\d+)/$', views.task_edit, name="task_edit"),
     url(r'^task-remove/(?P<id>\d+)/$', views.task_remove, name="task_remove"),
+    #url(r'^import-file/$', views.import_file, name="import-file"),
 ]

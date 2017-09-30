@@ -52,3 +52,8 @@ def task_remove(request, id):
     task = Task.objects.get(user=request.user, id=id)
     task.delete()
     return redirect('tasks')
+
+
+@login_required
+def import_file(request):
+    pass
