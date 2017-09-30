@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block styles %}
+  {{ block.super }}
+{% endblock styles %}
+
+{% block scripts %}
+  {{ block.super }}
+{% endblock scripts %}
+
+{% block content %}
+
+<div class="container">
+  <h1>{{ task.name }}</h1>
+  <!--Card-->
+  <div class="card">
+      <!--Card content-->
+      <div class="card-body">
+          <!--Text-->
+          <h4>State:</h4> <p class="card-text"> {{ task.get_state_display }}</p>
+
+          <h4>Descriptions:</h4> <p class="card-text"> {{ task.descriptions }}</p>
+
+          <h4>Expired:</h4> <p class="card-text"> {{ task.expired }}</p>
+
+          <h4>File:</h4> <p class="card-text"> <a href=""> {{ task.file }} </a></p>
+
+          <a href="{% url 'tasks' %}" class="btn btn-primary">Back</a>
+      </div>
+
+  </div>
+</div>
+<!--/.Card-->
+
+{% endblock content %}

@@ -2,5 +2,12 @@
 from __future__ import unicode_literals
 
 from django.test import TestCase
+from django.contrib.auth import User
 
-# Create your tests here.
+class TaskTestCase(TestCase):
+
+    def setUp(self):
+        self.user = User()
+
+
+    #def test_some>

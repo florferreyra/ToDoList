@@ -18,18 +18,19 @@ class TimeStampedModel(models.Model):
 
 
 class Task(TimeStampedModel):
-
+    """Principal model for declarate task related by user."""
     STATE_CHOICES = [
         ('p', 'pending'),
         ('s', 'success'),
     ]
 
     name = models.CharField(max_length=50)
+    date = models.DateField(null=True, blank=True)
     descriptions = models.CharField(max_length=200, blank=True, null=True)
     state = models.CharField(max_length=50, choices=STATE_CHOICES)
     user = models.ForeignKey(User)
     expired = models.DateField(null=True, blank=True)
-    file = models.FileField(upload_to='documents/%Y/%m/%d', null=True, blank=True)
+    file = models.FileField(upload_to='media/files', null=True, blank=True)
 
     class Meta:
         verbose_name = "Task"
