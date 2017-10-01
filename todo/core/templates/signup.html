@@ -12,26 +12,29 @@
 
 {% block content %}
 
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-      <p>
+<div class="container">
+  <div class="card p-2">
+    <div class="card-header blue-background text center-text">
+      <p class="title"> Sign UP </p>
+    </div>
+    <div class="card-body">
+      <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
 
-        {{ field.label_tag }}<br>
-        {{ field }}
+            <p class="Poitext1">{{ field.label_tag }}<p>
+            <p class="Poitext">{{ field }}</p>
 
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
+            {% for error in field.errors %}
+              <p class="errors">{{ error }}</p>
+            {% endfor %}
 
-        {% for error in field.errors %}
-          <p class="errors">{{ error }}</p>
+          </p>
         {% endfor %}
-
-      </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
-
+        <button type="submit" class="btn btn-default">Sign up</button>
+        <a href="{% url 'login' %}" class="btn btn-default waves-effect waves-light">Back</a>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock content%}

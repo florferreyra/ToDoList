@@ -28,10 +28,18 @@ class Task(TimeStampedModel):
     name = models.CharField(max_length=50)
     date = models.DateField(default=datetime.date.today)
     descriptions = models.CharField(max_length=200, blank=True, null=True)
-    state = models.CharField(max_length=50, choices=STATE_CHOICES)
+    state = models.CharField(max_length=50, choices=STATE_CHOICES, default='p')
     user = models.ForeignKey(User)
     expired = models.DateField(null=True, blank=True)
     file = models.FileField(upload_to='media/files', null=True, blank=True)
+
+    @property
+    def is_expired(self):
+        """returns a booblean with the comparison of expiration date with today"""
+        result = False
+        if self.expired:
+            result = datetime.date.today() > self.expired
+        return result
 
     class Meta:
         verbose_name = "Task"

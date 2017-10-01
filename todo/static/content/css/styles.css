@@ -1,6 +1,8 @@
 .btn {
   font-size: 14px;
   background-color: #58d68d;
+  font-family: 'Poiret One', cursive;
+  font-weight:900;
 }
 
 .btn .fa{
@@ -24,10 +26,10 @@
 
 }
 
-
 .title1{
-  font-size: 35px;
+  font-size: 50px;
   font-weight:600;
+  text-align: center;
   font-family: 'Caveat', cursive;
 
 }
@@ -79,27 +81,89 @@ label {
 }
 
 #id_username{
-  font-size: 16px;
+  font-size: 18px;
   margin-left: 15px;
   width: 90%;
+  font-weight:600;
 }
 
 #id_password{
-  font-size: 16px;
+  font-size: 18px;
   margin-left: 15px;
   width: 90%;
+  font-weight:600;
+}
+
+#id_password1{
+  font-size: 18px;
+  margin-left: 15px;
+  width: 90%;
+  font-weight:600;
+}
+
+#id_password2{
+  font-size: 18px;
+  margin-left: 15px;
+  width: 90%;
+  font-weight:600;
 }
 
 #id_name{
   font-size: 16px;
   margin-left: 15px;
   width: 90%;
+  display: flex;
 }
 
 #id_date{
   font-size: 16px;
   margin-left: 15px;
   width: 90%;
+  display: flex;
+}
+
+#id_descriptions{
+  font-size: 16px;
+  margin-left: 15px;
+  width: 90%;
+  display: flex;
+}
+
+#id_state{
+  font-size: 16px;
+  margin-left: 15px;
+  width: 10%;
+  display: flex;
+}
+
+#id_file{
+  font-size: 16px;
+  margin-left: 15px;
+  width: 90%;
+  display: flex;
+}
+
+
+#id_expired{
+  font-size: 16px;
+  margin-left: 15px;
+  width: 90%;
+  display: flex;
+}
+
+#id_first_name{
+  font-size: 16px;
+  margin-left: 15px;
+  width: 90%;
+  display: flex;
+}
+
+
+#id_last_name{
+  font-size: 16px;
+  margin-left: 15px;
+  width: 90%;
+  display: flex;
 }
 
 
@@ -119,4 +183,8 @@ label {
   font-size: 20px;
 }
 
-
+.Poitext1{
+  font-family: 'Poiret One', cursive;
+  font-weight:800;
+  font-size: 26px;
+}

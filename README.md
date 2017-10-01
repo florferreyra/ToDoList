@@ -1,65 +1,47 @@
-# Odontcloud
+# To do List
+This project consists of a list of tasks,
+in which a specific user can load independent tasks.
 
-## Primeros pasos: 
+It has a registration and login system.
 
-#### 1. [Instalar python3.6](https://askubuntu.com/questions/865554/how-do-i-install-python-3-6-using-apt-get)
+The actions allowed on the tasks are, create, edit and mark as it turns out.
 
-#### 2 Ejecutar:
-        sudo apt-get install python3.6-dev
+Each task consists of date of creation and expiration, title, description
+and the possibility of attaching a file.
 
-#### 3: Configurar entorno virtual dentro de la carpeta /backend. Elegir entre [virtualenv](https://virtualenv.pypa.io/en/stable/) ó [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)
-        Si elegiste virtualenv:
-        virtualenv -p python3 venv
+### Technologies
 
-#### 4: Activar entorno virtual
+Backend technologies:
 
-#### 5: [Instalar nvm](https://github.com/creationix/nvm) dentro de la carpeta frontend, nosotros usamos la versión 6.10.3 (lts/boron)
-        Dentro del directorio del proyecto:
-        nvm install 6.10.3
-        nvm use 6.10.3
-        nvm alias default 6.10.3
+* [Python]
+* [Django]
 
-#### 5.1: Instalar globalmente la [cli de angular](https://github.com/angular/angular-cli)
+Style Tools:
 
-#### 6: Instalar dependencias para backend:
-        pip install -r requirements.txt
+* [Md-Bootstrap]
+* [Bootstrap]
 
-#### 6.1: Activar el hook [pre-commit](http://pre-commit.com/).
-        pre-commit && pre-commit install
+Complementary tools for js:
 
-#### 7: Correr migraciones dentro de /backend/api:
-        python manage.py migrate
+* [Jquery] - use bootstrap
 
-#### 8: Instalar dependencias en /frontend:
-        npm install
-        
+## First steps:
 
-#### 9: Correr server de frontend:
-        npm start
+#### 1. [Install python2.7](https://www.python.org/download/releases/2.7/)
 
-#### 10: Correr server de backend:
-        python manage runserver
+#### 2: Configure virtual environment within the whole project. Choose between [virtualenv](https://virtualenv.pypa.io/en/stable/) or [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)
 
-# Reglas:
-* Respetar **PEP257**.
-* Nunca pushear directamente a master o al release. **SIEMPRE** hacer pull request con el nuevo feature.
-* El largo límite de una sentencia es de **120**.
-* Debe pasar **flakes8**.
-* Cada método/clase debe ser comentada diciendo **QUÉ** hace, no cómo lo hace.
-* La convención de formato de comentarios debe seguir la [JSDoc](https://en.wikipedia.org/wiki/JSDoc). 
-* Los comentarios deben estar en inglés (exceptuando este readme que ya lo hice en castellano) :dizzy_face:
-* Los comentarios deben incluir el tipo esperado (ej {str} o {int}) y una breve descripción para cada **parámetros de entrada** y **parámetros de salida**.
-* Si tenés dudas, HABLÁ con tus compañeros.
-* Si no sabés respecto a la filosofía python, escribí en tu intérprete de python ```import this```.
-* El commit con los cambios debe respetar el siguiente formato: 
-<código del proyecto>-<número de issue> [cualquier texto explicativo]. Por ejemplo:
-    ```git commit -am 'ODC-21 some changes in the backend'```.
+#### 3: Enable virtual environment
 
-#### ¿En el horno? :P
-Escribile a Nano o Javi.
+#### 4: Located within the folder /todo
 
-##### TODO:
-- :white_large_square: Proxiar el server de frontend para poder usar la api de backend.  
-- :white_large_square: Scrip de deploy.
-- :white_large_square: Agregar la sección de postgresql en el readme.
-- :white_large_square: Adding code arquitecture for readers.
+#### 5: Install dependencies for backend:
+        pip install -r requirements.txt
+
+#### 6: Running django migrations:
+        python manage.py migrate
+
+#### 7: Running backend server:
+        python manage runserver
+
+#### 8: Open Browser on [localhost](http://127.0.0.1:8000)

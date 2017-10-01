@@ -10,7 +10,7 @@
 
 {% block content %}
 <!-- Form login -->
-<div class="container login">
+<div class="container login Poitext">
   <div class="card  ml-0 p1 c1">
     <div class="col-md-12 margen-bottom animated fadeIn">
       <p class="text-danger errors">
@@ -21,7 +21,7 @@
     </div>
 
     <form method="POST" action="{% url 'login' %}">
-      <p class="center-text">Sign in</p>
+      <p class="center-text title1">Sign in </p>
       {% csrf_token %}
       {{ form.username.label_tag }}
       {{ form.username }}
