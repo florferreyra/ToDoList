@@ -17,8 +17,11 @@
 }
 
 .title{
-  font-size: 28px;
+  font-size: 35px;
   color: white;
+  font-weight:600;
+  font-family: 'Caveat', cursive;
+
 }
 
 .login{
@@ -77,3 +80,21 @@ label {
   margin-left: 15px;
   width: 90%;
 }
+
+.card-title {
+  text-align: left;
+  color: white;
+  font-size: 30px;
+  font-weight:800;
+  background-color: #5d6d7e;
+  font-family: 'Caveat', cursive;
+}
+
+.Poitext{
+  font-family: 'Poiret One', cursive;
+  color: grey;
+  font-weight:800;
+  font-size: 20px;
+}
+
+

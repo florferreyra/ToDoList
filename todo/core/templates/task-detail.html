@@ -17,14 +17,16 @@
       <!--Card content-->
       <div class="card-body">
           <!--Text-->
-          <h4>State:</h4> <p class="card-text"> {{ task.get_state_display }}</p>
+          <p class="card-title">State:</p> <p class="Poitext"> {{ task.get_state_display }}</p>
 
-          <h4>Descriptions:</h4> <p class="card-text"> {{ task.descriptions }}</p>
+          <p class="card-title">Date:</p> <p class="Poitext"> {{ task.date }}</p>
 
-          <h4>Expired:</h4> <p class="card-text"> {{ task.expired }}</p>
+          <p class="card-title">Descriptions:</p> <p class="Poitext"> {{ task.descriptions }}</p>
+
+          <p class="card-title">Expired:</p> <p class="Poitext"> {{ task.expired }}</p>
 
           {% if task.file %}
-          <h4>File:</h4> <p class="card-text"> <a href="{{ task.file.url }}"> {{ task.file }} </a></p>
+          <p class="card-title">File:</p> <p class="Poitext"> <a href="{{ task.file.url }}"> {{ task.file }} </a></p>
           {% endif %}
 
           <a href="{% url 'tasks' %}" class="btn btn-primary">Back</a>

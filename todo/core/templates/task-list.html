@@ -27,7 +27,7 @@
           {% for task in task_list %}
           <tr>
             <td>
-              {{ task.get_state_display }} : {{ task }}
+              <p class="Poitext"> {{ task.get_state_display }} : {{ task }}
             </td>
             <td class="right-text" >
               <a class="btn btn-default waves-effect waves-light p-2" href="{% url 'task-remove' task.id %}" role="button"><i class="fa fa-trash" aria-hidden="true"></i></a>
