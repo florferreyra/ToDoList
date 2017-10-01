@@ -24,6 +24,15 @@
 
 }
 
+
+.title1{
+  font-size: 35px;
+  font-weight:600;
+  font-family: 'Caveat', cursive;
+
+}
+
+
 .login{
   display: flex;
   justify-content: center;
@@ -80,6 +89,19 @@ label {
   margin-left: 15px;
   width: 90%;
 }
+
+#id_name{
+  font-size: 16px;
+  margin-left: 15px;
+  width: 90%;
+}
+
+#id_date{
+  font-size: 16px;
+  margin-left: 15px;
+  width: 90%;
+}
+
 
 .card-title {
   text-align: left;

@@ -14,6 +14,14 @@ class TaskForm(forms.ModelForm):
             'date': forms.DateInput(attrs={'type': 'date'}),
         }
 
+    def clean_date(self):
+        date = self.cleaned_data.get('date')
+        expired = self.cleaned_data.get('expired')
+        if expired is not None:
+            if (str(date) < str(expired)):
+                raise forms.ValidationError("Date can not be greater than the expiration")
+        return date
+
 
 class LoginForm(forms.Form):
     class Meta:

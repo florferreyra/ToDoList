@@ -9,12 +9,23 @@
 {% endblock scripts %}
 
 {% block content %}
-    <h1>Task</h1>
-    <form method="POST" enctype="multipart/form-data" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-        <a href="{% url 'tasks' %}" class="btn btn-primary">Back</a>
 
-    </form>
+<div class="container">
+  <div class="card p-2">
+    <div class="card-header blue-background text center-text">
+      <p class="title"> Tasks </p>
+    </div>
+    <div class="card-body">
+
+      <h1>Task</h1>
+      <form method="POST" enctype="multipart/form-data" class="post-form">{% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="save btn btn-default">Save</button>
+          <a href="{% url 'tasks' %}" class="btn btn-primary">Back</a>
+
+      </form>
+    </div>
+  </div>
+</div>
 
 {% endblock content %}

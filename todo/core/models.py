@@ -26,7 +26,7 @@ class Task(TimeStampedModel):
     ]
 
     name = models.CharField(max_length=50)
-    date = models.DateField(default=datetime.date.today, null=True, blank=True)
+    date = models.DateField(default=datetime.date.today)
     descriptions = models.CharField(max_length=200, blank=True, null=True)
     state = models.CharField(max_length=50, choices=STATE_CHOICES)
     user = models.ForeignKey(User)
