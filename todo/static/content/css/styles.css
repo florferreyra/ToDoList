@@ -10,8 +10,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 }
 
 .c1{
@@ -32,6 +30,9 @@
   text-align: left;
 }
 
-.right{
+.right-text{
   text-align: right;
 }
+
+.text-size{
+  font-size:16px;}

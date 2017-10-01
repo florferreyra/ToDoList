@@ -23,7 +23,9 @@
 
           <h4>Expired:</h4> <p class="card-text"> {{ task.expired }}</p>
 
-          <h4>File:</h4> <p class="card-text"> <a href=""> {{ task.file }} </a></p>
+          {% if task.file %}
+          <h4>File:</h4> <p class="card-text"> <a href="{{ task.file.url }}"> {{ task.file }} </a></p>
+          {% endif %}
 
           <a href="{% url 'tasks' %}" class="btn btn-primary">Back</a>
       </div>

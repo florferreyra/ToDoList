@@ -12,21 +12,26 @@
 {% block content %}
 
 <div class="container">
-  <a class="btn btn-primary ml-3" href="{% url 'logout' %}" role="button">Logout</a>
+  <div class="right-text">
+    <a class="btn btn-primary ml-3 text-size" href="{% url 'logout' %}" role="button">Logout</a>
+  </div>
    <!--Panel-->
-  <div class="card text-center">
-    <div class="card-header blue-background text">
+  <div class="card">
+    <div class="card-header blue-background text center-text">
       <h1> Tasks </h1>
     </div>
     <div class="card-body">
+
       <table class="table">
         <tbody>
           {% for task in task_list %}
           <tr>
             <td>
-              <input class="form-check-input " type="checkbox" id="blankCheckbox" value="option1" aria-label="hola"> {{ task }}
+              <div class="text-size">
+                {{ task.get_state_display }} : {{ task }}
+              </div>
             </td>
-            <td class="text-right" >
+            <td class="right-text" >
               <a class="btn btn-primary ml-3" href="{% url 'task-remove' task.id %}" role="button">Remove</a>
               <a class="btn btn-primary ml-3" href="{% url 'task-edit' task.id %}" role="button">Edit</a>
               <a class="btn btn-primary ml-3" href="{% url 'task-details' task.id %}" role="button">Details</a>
@@ -35,9 +40,10 @@
           {%endfor%}
         </tbody>
       </table>
-      <div class="card-footer text-muted blue-background text">
-        <a class="btn btn-primary ml-3 text-left" href="{% url 'form-task' %}" role="button">Add Task</a>
-      </div>
+
+    <div class="card-footer text-muted blue-background text">
+        <a class="btn btn-primary ml-3 text-left text-size" href="{% url 'form-task' %}" role="button">Add Task</a>
+    </div>
     </div>
   </div>
   <!--/.Panel-->
