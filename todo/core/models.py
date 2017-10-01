@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from django.contrib.auth.models import User
 from django.db import models
+import datetime
 
 
 class TimeStampedModel(models.Model):
@@ -25,7 +26,7 @@ class Task(TimeStampedModel):
     ]
 
     name = models.CharField(max_length=50)
-    date = models.DateField(null=True, blank=True)
+    date = models.DateField(default=datetime.date.today, null=True, blank=True)
     descriptions = models.CharField(max_length=200, blank=True, null=True)
     state = models.CharField(max_length=50, choices=STATE_CHOICES)
     user = models.ForeignKey(User)
