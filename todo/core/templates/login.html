@@ -19,14 +19,12 @@
         {% endif %}
       </p>
     </div>
-
     <form method="POST" action="{% url 'login' %}">
       <p class="center-text title1">Sign in </p>
       {% csrf_token %}
       {{ form.username.label_tag }}
       {{ form.username }}
       <br></br>
-
       {{ form.password.label_tag }}
       {{ form.password }}
 

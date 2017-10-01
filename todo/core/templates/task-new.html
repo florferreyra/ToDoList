@@ -17,10 +17,9 @@
     </div>
     <div class="card-body Poitext">
       <form method="POST" enctype="multipart/form-data" class="post-form">{% csrf_token %}
-          {{ form.as_p }}
-          <button type="submit" class="save btn btn-default">Save</button>
-          <a href="{% url 'tasks' %}" class="btn btn-default waves-effect waves-light">Back</a>
-
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+        <a href="{% url 'tasks' %}" class="btn btn-default waves-effect waves-light">Back</a>
       </form>
     </div>
   </div>
