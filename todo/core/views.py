@@ -9,6 +9,9 @@ from django.contrib.auth import login, authenticate
 
 @login_required
 def task(request):
+    """
+    Muestra la lista de tareas de un usuario.
+    """
     user = request.user
     task_list = Task.objects.filter(user=user)
     ctx = {'task_list': task_list}
@@ -17,6 +20,9 @@ def task(request):
 
 @login_required
 def task_new(request):
+    """
+    Muestra el formulario para crear una nueva tarea.
+    """
     if request.method == "POST":
         form = TaskForm(request.POST, request.FILES)
         if form.is_valid():
@@ -32,6 +38,9 @@ def task_new(request):
 
 @login_required
 def task_edit(request, id):
+    """
+    Vista para editar una tarea.
+    """
     task = Task.objects.get(user=request.user, id=id)
     if request.method == "POST":
         form = TaskForm(request.POST, request.FILES, instance=task)
@@ -48,6 +57,9 @@ def task_edit(request, id):
 
 @login_required
 def task_remove(request, id):
+    """
+    vista para eliminar una tarea.
+    """
     task = Task.objects.get(user=request.user, id=id)
     task.delete()
     return redirect('tasks')
@@ -55,12 +67,18 @@ def task_remove(request, id):
 
 @login_required
 def task_details(request, id):
+    """
+    Vista para mostrar los detalles una tarea.
+    """
     task = Task.objects.get(user=request.user, id=id)
     ctx = {'task': task}
     return render(request, 'task-detail.html', ctx)
 
 
 def signup(request):
+    """
+    Registra un nuevo usuario.
+    """
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():

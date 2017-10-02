@@ -6,6 +6,9 @@ import datetime
 
 
 class TimeStampedModel(models.Model):
+    """
+    Clase abstracta, para control interno de cada instancia.
+    """
 
     class Meta:
         abstract = True
@@ -19,23 +22,27 @@ class TimeStampedModel(models.Model):
 
 
 class Task(TimeStampedModel):
-    """Principal model for declarate task related by user."""
+    """
+    Principal model for declarate task related by user.
+    """
     STATE_CHOICES = [
         ('p', 'pending'),
         ('s', 'success'),
     ]
 
     name = models.CharField(max_length=50)
-    date = models.DateField(default=datetime.date.today)
+    date = models.DateField(default=datetime.date.today, blank=True)
     descriptions = models.CharField(max_length=200, blank=True, null=True)
-    state = models.CharField(max_length=50, choices=STATE_CHOICES, default='p')
+    state = models.CharField(max_length=50, choices=STATE_CHOICES, default='p', blank=True)
     user = models.ForeignKey(User)
     expired = models.DateField(null=True, blank=True)
     file = models.FileField(upload_to='media/files', null=True, blank=True)
 
     @property
     def is_expired(self):
-        """returns a booblean with the comparison of expiration date with today"""
+        """
+        Returns a booblean with the comparison of expiration date with today.
+        """
         result = False
         if self.expired:
             result = datetime.date.today() > self.expired
