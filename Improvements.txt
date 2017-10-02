@@ -1,7 +1,7 @@
-Mejoras:
+Future functionalities
 
--Agregar un date picker para seleccionar las fechas.
--Usar Celery para que cuando una tarea este cercana a expirar notifique por mail.
--Agregar un checkbox para cambiar el estado de una tarea.
--Agregar un filtro, que filtre por estado(success, pending, all).
--Agregar un buscador.
+-Add a date picker to select dates.
+-Use Celery so that when a task is close to expiring notify by mail.
+-Add a checkbox to change the status of a task.
+-Add a filter, filter by status (success, pending, all).
+-Add a search engine.

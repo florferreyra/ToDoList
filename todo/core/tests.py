@@ -8,12 +8,12 @@ from django.test import Client
 
 class TaskTestCase(TestCase):
     """
-    Valida las acciones que el usuario puede llevar a cabo sobre una tarea.
+    Validates the actions that the user can carry out on a task.
     """
 
     def setUp(self):
         """
-        Crea un usuario y loguea.
+        Create a user and log in.
         """
         self.user = User()
         self.user.set_password('password')
@@ -23,7 +23,7 @@ class TaskTestCase(TestCase):
 
     def test_simple_task(self):
         """
-        Crea una tarea nueva y valida su existencia.
+        Create a new task and validate its existence.
         """
         url = '/tasks/form-task/'
         request_params = {
@@ -40,7 +40,7 @@ class TaskTestCase(TestCase):
 
     def test_task_edit(self):
         """
-        crea una tarea nueva, la edita y valida la edicion.
+        Creates a new task, edits and validates the edit.
         """
         task = Task.objects.create(name='task1', descriptions='dsfdsf',
                                    state='p', user=self.user)
@@ -62,7 +62,7 @@ class TaskTestCase(TestCase):
 
     def test_task_remove(self):
         """
-        crea una tarea nueva y la borra.
+        Creates a new task and erases it.
         """
         task = Task.objects.create(name='task1', descriptions='dsfdsf',
                                    state='p', user=self.user)

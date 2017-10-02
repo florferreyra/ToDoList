@@ -7,7 +7,7 @@ import datetime
 
 class TimeStampedModel(models.Model):
     """
-    Clase abstracta, para control interno de cada instancia.
+    Abstract class, for internal control of each instance.
     """
 
     class Meta:

@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 class TaskForm(forms.ModelForm):
     """
-    Formulario del modelo Task
+    Form of Task model.
     """
     class Meta:
         model = Task
@@ -21,7 +21,7 @@ class TaskForm(forms.ModelForm):
 
     def clean_expired(self):
         """
-        Valida que la fecha de creacion sea menor que la fecha de expiracion.
+        Validate that the date of creation is less than the date of expiration.
         """
         date = self.cleaned_data.get('date')
         expired = self.cleaned_data.get('expired')
@@ -29,12 +29,12 @@ class TaskForm(forms.ModelForm):
             if (date > expired):
                 raise forms.ValidationError
             ("The expiration date can not be less than the date of creation.")
-        return date
+        return expired
 
 
 class LoginForm(forms.Form):
     """
-    Formulario login de django.
+    Django login form.
     """
     class Meta:
         model = User
@@ -46,7 +46,7 @@ class LoginForm(forms.Form):
 
 class SignUpForm(UserCreationForm):
     """
-    Formulario de Registro. Hereda del formulario de creacion de django.
+    Registration Form. Inherited from the Django user creation form.
     """
     first_name = forms.CharField(required=False, help_text='Optional.')
     last_name = forms.CharField(required=False, help_text='Optional.')

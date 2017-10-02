@@ -10,7 +10,7 @@ from django.contrib.auth import login, authenticate
 @login_required
 def task(request):
     """
-    Muestra la lista de tareas de un usuario.
+    Displays the list of tasks for a user.
     """
     user = request.user
     task_list = Task.objects.filter(user=user)
@@ -21,7 +21,7 @@ def task(request):
 @login_required
 def task_new(request):
     """
-    Muestra el formulario para crear una nueva tarea.
+    View to create a new task.
     """
     if request.method == "POST":
         form = TaskForm(request.POST, request.FILES)
@@ -39,7 +39,7 @@ def task_new(request):
 @login_required
 def task_edit(request, id):
     """
-    Vista para editar una tarea.
+    View to edit a task.
     """
     task = Task.objects.get(user=request.user, id=id)
     if request.method == "POST":
@@ -58,7 +58,7 @@ def task_edit(request, id):
 @login_required
 def task_remove(request, id):
     """
-    vista para eliminar una tarea.
+    view to delete a task.
     """
     task = Task.objects.get(user=request.user, id=id)
     task.delete()
@@ -68,7 +68,7 @@ def task_remove(request, id):
 @login_required
 def task_details(request, id):
     """
-    Vista para mostrar los detalles una tarea.
+    View to show the details a task.
     """
     task = Task.objects.get(user=request.user, id=id)
     ctx = {'task': task}
@@ -77,7 +77,7 @@ def task_details(request, id):
 
 def signup(request):
     """
-    Registra un nuevo usuario.
+    Register a new user.
     """
     if request.method == 'POST':
         form = SignUpForm(request.POST)
