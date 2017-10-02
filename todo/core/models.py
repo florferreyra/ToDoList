@@ -33,7 +33,8 @@ class Task(TimeStampedModel):
     name = models.CharField(max_length=50)
     date = models.DateField(default=datetime.date.today, blank=True)
     descriptions = models.CharField(max_length=200, blank=True, null=True)
-    state = models.CharField(max_length=50, choices=STATE_CHOICES, default='p', blank=True)
+    state = models.CharField(max_length=50, choices=STATE_CHOICES, default='p',
+                             blank=True)
     user = models.ForeignKey(User)
     expired = models.DateField(null=True, blank=True)
     file = models.FileField(upload_to='media/files', null=True, blank=True)

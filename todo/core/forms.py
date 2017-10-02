@@ -13,8 +13,10 @@ class TaskForm(forms.ModelForm):
         model = Task
         fields = ('name', 'date', 'descriptions', 'state', 'expired', 'file')
         widgets = {
-            'expired': forms.DateInput(format=('%Y-%m-%d'), attrs={'type': 'date'}),
-            'date': forms.DateInput(format=('%Y-%m-%d'), attrs={'type': 'date'}),
+            'expired': forms.DateInput(format=('%Y-%m-%d'),
+                                       attrs={'type': 'date'}),
+            'date': forms.DateInput(format=('%Y-%m-%d'),
+                                    attrs={'type': 'date'}),
         }
 
     def clean_expired(self):
@@ -25,7 +27,8 @@ class TaskForm(forms.ModelForm):
         expired = self.cleaned_data.get('expired')
         if expired is not None:
             if (date > expired):
-                raise forms.ValidationError("The expiration date can not be less than the date of creation.")
+                raise forms.ValidationError
+            ("The expiration date can not be less than the date of creation.")
         return date
 
 
@@ -51,4 +54,5 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'password1', 'password2', )
+        fields = ('username', 'first_name', 'last_name',
+                  'password1', 'password2')
